@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import io.jarvisos.app.storage.UserPreferences
 
 @Composable
 fun HomeScreen() {
@@ -36,7 +37,7 @@ fun HomeScreen() {
         )
 
         Text(
-            text = "Good Afternoon, Cipto",
+            text = "Good Afternoon, ${UserPreferences.userName}",
             color = Color.LightGray,
             fontSize = 18.sp
         )
@@ -52,7 +53,7 @@ fun HomeScreen() {
         Spacer(modifier = Modifier.height(30.dp))
 
         Text(
-            "SYSTEM STATUS",
+            text = "SYSTEM STATUS",
             color = Color.Cyan,
             fontWeight = FontWeight.Bold
         )
@@ -63,9 +64,7 @@ fun HomeScreen() {
         StatusItem("Memory", "READY")
         StatusItem("Voice Engine", "ACTIVE")
         StatusItem("Battery", "83%")
-
     }
-
 }
 
 @Composable
@@ -91,7 +90,6 @@ fun MenuCard(title: String) {
         )
 
     }
-
 }
 
 @Composable
@@ -116,5 +114,4 @@ fun StatusItem(name: String, value: String) {
         )
 
     }
-
 }
