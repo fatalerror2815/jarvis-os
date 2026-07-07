@@ -44,18 +44,20 @@ class MainActivity : ComponentActivity() {
                 !setupFinished -> {
 
                     SetupScreen(
-                        onSetupComplete = {
 
-                            UserPreferences.completeSetup("Cipto")
+                        onSetupComplete = { userName ->
+
+                            UserPreferences.completeSetup(userName)
 
                             setupFinished = true
 
                         }
+
                     )
 
                 }
 
-                // Home
+                // Home Screen
                 else -> {
 
                     HomeScreen()
